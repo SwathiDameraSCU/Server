@@ -267,6 +267,12 @@ mainApp.controller('ViewDoctorsController', function mySuccess($scope, $http){
 			});
 		};
 
+		$http.get('/viewDoctor').then(function(response){
+			console.log("response"+response.data);
+			//$scope.list = response;
+		});
+
 });
+
 
 

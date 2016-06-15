@@ -1,35 +1,12 @@
 var mongojs = require('mongojs');
-var adminDB = mongojs('adminReg',['adminReg']);
-var patientDB = mongojs('patientReg',['patientReg']);
-var doctorDB = mongojs('doctorReg',['doctorReg']);
+var adminDB = mongojs('HepCat', ['adminReg']);
+var patientDB = mongojs('HepCat', ['patientReg']);
+var doctorDB = mongojs('HepCat', ['doctorReg']);
+var appointmetsDB = mongojs('HepCat', ['appointmetReg']);
 var mongoose = require('mongoose');
 var Patient = require('../model/patient');
-
+var Patientlogin = require('../model/patientlogin');
 mongoose.connect('mongodb://localhost/adminReg');
-
-
-
-var kitty = new Patient({
-  firstName:  'John',
-  lastName: 'Doe',
-  gender: 'M',
-  dob: new Date(),
-  insurance: 'Test k',
-  isHomeless: true,
-  race: 'Asian'
-});
-
-kitty.save(function (err, sata) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('meow', sata);
-  }
-});
-
-kitty.findSimilarTypes(function (err, dogs) {
-  console.log(dogs); // woof
-});
 
 module.exports = function(app) {
 
@@ -91,7 +68,7 @@ module.exports = function(app) {
             var dataLen = doc.length;
             console.log("dataLen: " + dataLen);
             if (dataLen > 0) {
-                $scope.message = "Patient already exists;"
+                //$scope.message = "Patient already exists;"
             } else {
 
             }
@@ -263,24 +240,27 @@ module.exports = function(app) {
         res.json(contacts);
     });
 
+    app.get('/api/authenticate', function(req, res) {
+        var data = req.body;
+    });
+
+
+
+
     // sample api route
     app.post('/api/authenticate', function(req, res) {
         var data = req.body;
-        var user;
-
-
-        if (data.username === 123) {
-            user = {
-                error: 'User not found'
-            };
-        } else {
-            user = {
-                name: 'John Doe',
-                phone: '408 123 1234',
-                uid: 1234
-            };
-        }
-
+        var user = new Patientlogin({
+            phonenumber: data.username,
+            pin: data.uid
+        });
+        user.save(function(err, sata) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('user inserted', sata);
+            }
+        });
 
         res.json(user);
     });
@@ -289,6 +269,44 @@ module.exports = function(app) {
         console.log("connected to server");
     });
 
+
+app.post('/api/getUsers',function(req,res){
+var data = req.body;
+
+        patientDB.patientReg.find({cnct: (data.username).toString()}, function(err,doc){
+            // console.log(doc);
+
+            if(doc.length){
+                console.log("user exist");
+
+            }else{
+                console.log("user doesnot exist");
+            }
+            res.json(doc);
+        });
+
+    //res.json({});
+});
+
+    app.get('/api/getUsers/:user', function(req, res) {
+        console.log("recived the service request");
+        console.log("I recieved a GET request");
+        var patientid = req.params.user;
+        console.log(patientid);
+        var data;
+        patientDB.patientReg.find({cnct: patientid}, function(err,doc){
+            // console.log(doc);
+
+            if(doc.length){
+                console.log("user exist");
+
+            }else{
+                console.log("user doesnot exist");
+            }
+            res.json(doc);
+        });
+
+    });
 
     // route to handle creating goes here (app.post)
     // route to handle delete goes here (app.delete)
