@@ -17,6 +17,26 @@ The administrator has the following additional features.<br>
 This app is developed using AngularJS for the UI.<br>
 
 # Steps to view the app
+1. <b> $git clone https://github.com/SwathiDameraSCU/Server</b></br>
+2. <b> $cd Server</b></br>
+2. <b> install mongodb and nodejs </b></br>
+<b> Run the following commands on your command prompt. </b></br>
+3. <b> npm install express </b></br>
+4. <b> npm install mongodb </b></br>
+5. <b> npm install body-parser </b></br>
+6. <b> npm install mongojs </b></br>
+<b>To start the node server execute the following command</b>
+7. node server
+<b>To start the mongodb server follow below step</b>
+8. copy the path of the installed mongodb folder until the bin folder to make it as current directory and type mongod
+<b>To start the mongodb client in another command prompt, follow below step</b>
+9. copy the path of the installed mongodb folder until the bin folder to make it as current directory and type mongo
+10. The application would be visible at the "http://localhost:8006" location.
+
+=======
+# Mobile-App
+HepCat C Mobile App
+
 
 
 
