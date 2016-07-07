@@ -1,4 +1,5 @@
-# Server
+# Server (Web Application)
+HepCat C Web App
 
 HepCat C App - Desktop Application and Mobile app Server 
 Tech stack: MEAN stack (MongoDB, Express.js, AngularJS, Node.js), and RestFul API.
@@ -34,8 +35,8 @@ This app is developed using AngularJS for the UI.<br>
 10. The application would be visible at the "http://localhost:8006" location.
 
 =======
-# Mobile-App
-HepCat C Mobile App
+# Server (Web Application)
+HepCat C Web App
 
 
 
