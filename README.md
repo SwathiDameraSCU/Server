@@ -32,7 +32,15 @@ This app is developed using AngularJS for the UI.<br>
 8. copy the path of the installed mongodb folder until the bin folder to make it as current directory and type mongod</br>
 <b>To start the mongodb client in another command prompt, follow below step</b></br>
 9. copy the path of the installed mongodb folder until the bin folder to make it as current directory and type mongo</br>
-10. The application would be visible at the "http://localhost:5000" location.
+10. The application would be visible at the "http://localhost:5000" location.</br>
+
+# ScreenShot of the Application:
+
+## Admin Login
+
+![loginscreen](https://cloud.githubusercontent.com/assets/18272509/17455994/c3cf8b98-5b7d-11e6-8025-d6132ce73e33.png)
+
+
 
 =======
 # Server (Web Application)
