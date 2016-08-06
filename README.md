@@ -40,6 +40,24 @@ This app is developed using AngularJS for the UI.<br>
 
 ![loginscreen](https://cloud.githubusercontent.com/assets/18272509/17455994/c3cf8b98-5b7d-11e6-8025-d6132ce73e33.png)
 
+## Home Screen
+![homescreen](https://cloud.githubusercontent.com/assets/18272509/17456034/569739d4-5b7f-11e6-838b-bb9727266382.png)
+
+## Patient Registration
+
+![patient registration](https://cloud.githubusercontent.com/assets/18272509/17456036/5c089a0c-5b7f-11e6-86f1-c3c5f152a58d.png)
+
+## Existing Patients
+
+![existingpatients](https://cloud.githubusercontent.com/assets/18272509/17456037/61d4021e-5b7f-11e6-91bf-455a7e60eec8.png)
+
+## Search Existing Patients
+
+![searchexistingpatients](https://cloud.githubusercontent.com/assets/18272509/17456038/65c23b84-5b7f-11e6-80c2-2bab28bd6f2f.png)
+
+
+
+
 
 
 =======
